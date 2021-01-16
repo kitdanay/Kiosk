@@ -1,0 +1,190 @@
+﻿@model List<WebApplicationNet.Models.manangment>
+@{
+    ViewBag.Title = "frmMain";
+}
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+<script type="text/javascript">
+    var str = "@((string)ViewBag.mssg)";
+    if (str !== null && str !== '') {
+        if (str == "Success") {
+            swal({
+                title: "",  //สิ่งที่เปลี่ยนได้ คือหัว
+                text: str,  // ข้อความที่แสดง
+                type: 'success' // อันนี้คือประเภทว่าจะให้เป็นแบบไหน
+                // timer: 2000 // หน่วงเวลา
+
+            })
+        } else if (str == "Error_Location"){
+            swal({
+                title: "",  //สิ่งที่เปลี่ยนได้ คือหัว
+                text: "กรูณาใส่ LOCATION ให้ถูกต้อง !!",  // ข้อความที่แสดง
+                type: 'warning' // อันนี้คือประเภทว่าจะให้เป็นแบบไหน
+                // timer: 2000 // หน่วงเวลา
+
+            })
+        }
+        else {
+            swal({
+                title: "",  //สิ่งที่เปลี่ยนได้ คือหัว
+                text: str,  // ข้อความที่แสดง
+                type: 'error' // อันนี้คือประเภทว่าจะให้เป็นแบบไหน
+                // timer: 2000 // หน่วงเวลา
+
+            })
+        }
+        //swal("", str,"warning")
+
+
+
+    }
+</script>
+
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+<table style="width:100%; ">
+    <tr>
+        <td style="width: 65%; height: 160px; background-color:#FFFFFF;">
+
+            <div class="row">
+                <div class="col-10">
+                    <div class="fixed">
+                        @*style="margin-top: 2.6rem;"*@
+                        <img src="~/assets/ram9.jpg">
+                    </div>
+                </div>
+                <div class="col-2">
+                </div>
+            </div>
+
+        </td>
+
+
+        <td style="background-color:#008080; width: 30%; height: 160px;">&nbsp;</td>
+        <td style="width: 5%;height: 160px">
+        </td>
+    </tr>
+    <tr>
+
+        <td style="background-color:#489999;width: 65%;height: 580px;">
+
+            <div class="frame">
+                <div class="check">
+                    <form method="post">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <input type="checkbox" id="check_box" name="check_box" value="English">
+                                <label style="font-size: x-large; " for="check_box"> English</label><br>
+                            </div>
+                            <div class="col-sm-6">
+                                <a class="btn btn-primary1" style="color: black;" data-toggle="modal" data-target="#exampleModalLong" data-backdrop="static" data-keyboard="false">
+                                    <i class="fa fa-cog" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+
+
+                        @foreach (var item in Model)
+                        {
+                            <button type="submit" id="title" name="location_type" value="@item.location_type" class="custom-btn btn-1" onclick="savepatient(@item.location_type)">@item.location_type : @item.title</button>
+                        }
+
+
+
+
+
+                    </form>
+
+                </div>
+
+            </div>
+        </td>
+
+        <td style="background-color: #004d4d; width: 30%;height: 580px;"></td>
+        <td style="background-color: #489999;width: 5%;height: 580px;"></td>
+    </tr>
+    <tr>
+        <td style="width: 65%;height: 100px;">&nbsp;</td>
+        <td style="background-color:#008080; width: 30%;height: 100px;">&nbsp;</td>
+        <td style="width: 5%;height: 100px;"><div style="color:aqua">v 1.0.0</div></td>
+    </tr>
+</table>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h5 class="modal-title" id="exampleModalLongTitle">
+                            Add_Location <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                        </h5>
+                    </div>
+                    <div class="col-sm-6">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="modal-body">
+                    <form method="post">
+                        <div class="form-group" style="color: black;">
+                            <div class="row" style="margin:1rem;">
+                                <div class="col-sm-4">
+                                    <label for="title">name</label>
+                                </div>
+                                <div class="col-sm-8">
+                                    <input type="text" style="text-align: left;max-width: none;" class="form-control" id="title" name="title" placeholder="name" required>
+                                </div>
+                            </div>
+                            <div class="row" style="margin:1rem;">
+                                <div class="col-sm-4">
+                                    <label for="location_id">location_id</label>
+                                </div>
+                                <div class="col-sm-8">
+                                    <input type="text" style="text-align: left;max-width: none;" class="form-control" id="location_id" name="location_id" placeholder="location_id" required>
+                                </div>
+                            </div>
+                            <div class="row" style="margin:1rem;">
+                                <div class="col-sm-4">
+                                    <label for="exampleFormControlSelect1">Type</label>
+                                </div>
+                                <div class="col-sm-8">
+                                    <select class="form-control" id="exampleFormControlSelect1" name="location_type" style="max-width: none;">
+                                        <option>A</option>
+                                        <option>B</option>
+                                        <option>C</option>
+                                        <option>D</option>
+                                        <option>E</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row" style="margin:1rem;">
+                                <div class="col-sm-4">
+                                    <label for="number_running">running</label>
+                                </div>
+                                <div class="col-sm-8">
+                                    <input type="text" style="text-align: left;max-width: none;" class="form-control" id="number_running" name="number_running" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" id="submt_location" name="submt_location" value="submt_location" class="btn btn-primary">Save</button>
+                    </form>
+                </div>
+                <div class="modal-footer" style="border-top: 0;">
+
+                    @*<button type="button" class="btn btn-secondary" style="width:7rem;height:3rem;font-size: x-large;" data-dismiss="modal">Close</button>*@
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

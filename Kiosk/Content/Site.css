@@ -1,0 +1,159 @@
+﻿body {
+    /*padding-top: 50px;*/
+    /*padding-bottom: 20px;*/
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    /*padding-left: 0;
+    padding-right: 0;*/
+    padding-right: 0;
+    padding-left: 0;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/*------------------ Kiosk --------------------*/
+#check_box {
+    /*float: left*/
+    width: 2rem;
+    height: 2rem;
+    font-family: db_ozone_xmedium
+}
+
+img {
+    /*padding:10px;*/
+    width: 260px;
+    /*height:200px;*/
+}
+
+.login-logo, .register-logo {
+    font-family: "db_ozone_xmedium";
+    font-size: 5rem;
+    font-weight: 300;
+    margin-bottom: .9rem;
+    text-align: center;
+}
+
+.login-box-msg, .register-box-msg {
+    font-family: "db_ozone_xmedium";
+    font-size: 1.3rem;
+    margin: 0;
+    padding: 0 20px 20px;
+    text-align: center;
+}
+
+.input-group > .custom-file, .input-group > .custom-select, .input-group > .form-control, .input-group > .form-control-plaintext {
+    font-family: "Mitr Light",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-size: 1rem;
+    position: relative;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    width: 1%;
+    margin-bottom: 0;
+}
+
+.custom-btn:not(:disabled) {
+    font-family: "db_ozone_xmedium";
+    cursor: pointer;
+    font-size: 3rem;
+}
+
+.frame:not(.form-check-label):not(.custom-file-label) {
+    font-family: "db_ozone_xmedium";
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.frame {
+    width: 100%;
+    margin: 10px auto;
+    text-align: center;
+}
+
+.custom-btn {
+    margin: 20px;
+}
+
+    .custom-btn:hover {
+        color: white;
+    }
+
+    .custom-btn .modal-footer {
+        margin: 5px;
+    }
+
+input:hover {
+    color: deepskyblue;
+}
+
+
+
+.custom-btn {
+    width: 490px;
+    height: 100px;
+    color: rgb(5, 0, 0);
+    border-radius: 35px; /*button*/
+    padding: 20px 35px;
+    font-family: "db_ozone_xmedium";
+    font-weight: 200;
+    font-size: xx-large;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    /*display: inline-block;*/
+    box-shadow: inset 2px 2px 2px 0px rgba(255,255,255,0.5), 7px 7px 20px 0px rgba(100, 121, 160, 0.1), 4px 4px 5px 0px rgba(21, 28, 28, 0.1);
+    outline: none;
+}
+
+.btn-1 {
+    background: rgb(241, 242, 245);
+    background: linear-gradient(0deg, rgb(250, 249, 250) 0%, rgb(212, 215, 247) 100%);
+    border: none;
+}
+
+    .btn-1:hover {
+        /*      background: rgb(220, 220, 223);
+                background: linear-gradient(0deg, rgb(9, 67, 134) 0%, rgb(158, 216, 250) 100%);*/
+        background: rgb(123, 204, 181);
+        background: linear-gradient(0deg, rgb(97, 171, 158) 1%, rgb(37, 111, 98) 100%);
+        /*text-emphasis-color:brown;*/
+    }
+
+input {
+    text-align: center;
+}
+
+#wrapper {
+    width: 100%;
+    height: 50px;
+    /*border: 1px solid black;*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#submt_location {
+    width: 18rem;
+    height: 3rem;
+}
+/*#wrapper11 {
+    border: 1px solid black;
+    width: 500%;
+    height: 550px;
+}*/
+
+/*------------------ Kiosk --------------------*/
