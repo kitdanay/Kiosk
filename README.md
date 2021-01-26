@@ -1,6 +1,0 @@
-# Kiosk
-KioskQ
-
-
-
- ทดสอบ
